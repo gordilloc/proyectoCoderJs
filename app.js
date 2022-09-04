@@ -1,83 +1,114 @@
-alert('Hola!, Bienvenido!');
+alert('¡Hola, Bienvenido a More than Sweet!');
+
+do {    
+  nombre = prompt("Ingreso tu nombre:");
+} 
+while (nombre == "");
 
 let dato = { 
-  nombre: prompt("ingrese su Nombre:"),
-  Tel: prompt("ingrese su numero de contacto:"),
+  tel: prompt("ingrese su numero de contacto:"),
   dire: prompt("Indique su direccion")
 
 };
 
-let nombre = dato["nombre"];
 let tel = dato["tel"];
 let dire = dato["dire"];
 alert(` Un gusto tu visita, ${nombre}`);
 
-let opIn = prompt(`¿En que te podemos ayudar o servir?:
-1- Pedido
-2- Consulta
-3- Contacto
-4- Catalogo
+let opIn = prompt(` ¿Que estas buscando? Tenemos disponbles:
+1- Torta
+2- Postre
+3- Galleta
+4- Porciones
 5- Salir
 `);
 
-while (opIn != "Esc" && opIn != "esc" && opIn != "Esc" && opIn != "5") {
-
-  switch (opIn) {
-    case "1":
-      console.log(`Pedido: ${opIn}, valor $1200`);
-      break;
-    case "2":
-      let consul = prompt("Ingrese su mensaje y Luego Aaceptar");
-      break;
-    case "3":
-      console.log(`Pedido: ${opIn}, valor $250`);
-      break;
-      case "4":
-      console.log(`Pedido: ${opIn}, valor $4500`);
-      break;
-    default:
-      console.log("Gracias por la Visita");
-      break;
-    }
-  
-  }
-
-/*let opIn = prompt(`Indique por el numero una opcion o Precione ESC:
-1- Postre
-2- Torta
-3- Galletas
-4- Lunch
-5- Tarta
-6- Porciones
-`);
-
-while (opIn != "Esc" && opIn != "esc" && opIn != "Esc") {
-
 switch (opIn) {
   case "1":
-    console.log(`Pedido: ${opIn}, valor $1200`);
-    break;
+    alert('Usted a elegido torta')
+                 cantidad = Number(prompt("¿De que cantidad de pisos?"));
+                 precio = 1300;
+                 total = calCosTot(precio, cantidad);
+                 alert(`Total a pagar: $ ${total} `);
+                 confirmacion = Number(prompt("¿Cual es el Medio de Pago? indique 1 Si es con tarjeta o 2 Si es contado o 3 para salir"))
+                 if(confirmacion == 1){
+                    alert('Ingrese los datos de pago:')
+                    tarjeta = Number(prompt())
+                    alert(`Gracias Por su Compra, Nos poderemos en contacto por su pedido, por el contacto ${tel}`)
+                 }
+                 else if (confirmacion == 3){
+                    alert(`¡Te esperamos Pronto!`)
+                 }
+                 else{
+                  alert(`Muchas Gracias Por su Compra el envio se realizara ${dire}`)
+               }
+               break;
   case "2":
-    console.log(`Pedido: ${opIn}, valor $1800`);
-    break;
+    alert('Usted a elegido Postre')
+                 cantidad = Number(prompt("¿Cual es la Cantidad?"));
+                 precio = 990;
+                 total = calCosTot(precio, cantidad);
+                 alert(`Total a pagar: $ ${total} `);
+                 confirmacion = Number(prompt("¿Cual es el Medio de Pago? indique 1 Si es con tarjeta o 2 Si es contado o 3 para salir"))
+                 if(confirmacion == 1){
+                    alert('Ingrese los datos de pago:')
+                    tarjeta = Number(prompt())
+                    alert(`Gracias Por su Compra, Nos poderemos en contacto por su pedido, por el contacto ${tel}`)
+                 }
+                 else if (confirmacion == 3){
+                    alert(`¡Te esperamos Pronto!`)
+                 }
+                 else{
+                  alert(`Muchas Gracias Por su Compra el envio se realizara ${dire}`)
+               }
+               break;
   case "3":
-    console.log(`Pedido: ${opIn}, valor $250`);
-    break;
+    alert('Usted a elegido Galleta')
+                 cantidad = Number(prompt("Presentacion en 5 Unidades ¿Indique la cantidad de Galletas?"));
+                 precio = 440;
+                 total = calCosTot(precio, cantidad);
+                 alert(`Total a pagar: $ ${total} `);
+                 confirmacion = Number(prompt("¿Cual es el Medio de Pago? indique 1 Si es con tarjeta o 2 Si es contado o 3 para salir"))
+                 if(confirmacion == 1){
+                    alert('Ingrese los datos de pago:')
+                    tarjeta = Number(prompt())
+                    alert(`Gracias Por su Compra, Nos poderemos en contacto por su pedido, por el contacto ${tel}`)
+                 }
+                 else if (confirmacion == 3){
+                    alert(`¡Te esperamos Pronto!`)
+                 }
+                 else{
+                  alert(`Muchas Gracias Por su Compra el envio se realizara ${dire}`)
+               }
+               break;
     case "4":
-    console.log(`Pedido: ${opIn}, valor $4500`);
-    break;
-  case "5":
-    console.log(`Pedido: ${opIn}, valor $180`);
-    break;
-  case "6":
-    console.log(`Pedido: ${opIn}, valor $90`);
-    break;
+      alert('Usted a elegido Porciones')
+                 cantidad = Number(prompt("¿Cuantas porciones quieres?"));
+                 precio = 990;
+                 total = calCosTot(precio, cantidad);
+                 alert(`Total a pagar: $ ${total} `);
+                 confirmacion = Number(prompt("¿Cual es el Medio de Pago? indique 1 Si es con tarjeta o 2 Si es contado o 3 para salir"))
+                 if(confirmacion == 1){
+                    alert('Ingrese los datos de pago:')
+                    tarjeta = Number(prompt())
+                    alert(`Gracias Por su Compra, Nos poderemos en contacto por su pedido, por el contacto ${tel}`)
+                 }
+                 else if (confirmacion == 3){
+                    alert(`¡Te esperamos Pronto!`)
+                 }
+                 else{
+                  alert(`Muchas Gracias Por su Compra el envio se realizara ${dire}`)
+               }
+               break;
 
   default:
-    console.log("Te ahorras unos pesos si no pedis");
+    alert('Gracias por tu Visita!');
     break;
 }
   
-}*/
 
+function calCosTot(precio, cantidad){
+  total = precio * cantidad
+  return total;
+}
 
