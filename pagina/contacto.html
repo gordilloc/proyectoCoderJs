@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Desde esta web podes encontrar el formulario de contacto y realizar tu pedido">
+    <!-- wow js -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+    <!-- CSS Local -->
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../img/favicon.png">
+
+
+    <title>Comunicate con la mejor opcion para el lunch de tus fiestas</title>
+  </head>
+
+  <!-- inicio de Nav -->
+
+  <nav class="navbar navbar-expand-lg navbar-light nav_back">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../img/logomts.png" alt="Logo More Thand Sweet - Date un gusto" class="icon_log">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Fin de Nav -->
+
+<!-- Inicio Banner -->
+<header>
+
+</header>
+<!-- Fin Banner -->
+	<main>
+		<br>
+	 	<h1>Contáctenos y realiza tu pedido</h1>
+	 	<br>
+	 	<section class="prod_box bg_light">
+			<form action="contacto.php">
+
+				<div class="mb-3">
+				  <label for="name" class="form-label">Nombre y apellido
+				  </label>
+				  <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre y apellido">
+				</div>
+
+				<br>
+				<div class="mb-3">
+				  <label for="Correo" class="form-label">Email
+				  </label>
+				  <input type="email" class="form-control" id="correo" placeholder="mail@contacto.com">
+				</div>
+
+				<fieldset>
+					<legend class="form-label">Encargo o Presupeusto</legend>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="sol postre" id="postres">
+					  <label class="form-check-label" for="selec-postres">
+					    Postres
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Tortas" checked>
+					  <label class="form-check-label" for="selec-Tortas">
+					    Tortas
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="budin" id="budin">
+					  <label class="form-check-label" for="selec-budin">
+					    budin
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="Galletitas" id="Galletas" checked>
+					  <label class="form-check-label" for="selec-galletas">
+					    Galletas
+					  </label>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Informacion del encargo o presupeusto</legend>
+
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="envio" id="Casa" value="direccion">
+					  <label class="form-check-label" for="Casa">
+					   Envío a domicilio
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="envio" id="Acuerda entrega" checked>
+					  <label class="form-check-label" for="Acuerda entrega"> Acuerda entrega
+					  </label>
+					</div>
+					<br>
+					<label for="Departamento">Montevideo</label>
+					<select name="" id="">
+						<option value="MVD">Montevideo</option>
+						<option value="Canelones">Canelones</option>
+						<option value="interior">Encomienda</option>
+					</select>
+				</fieldset>
+				<div class="mb-3">
+				  <label for="comentario" class="form-label">Dejes su mensaje
+				  </label>
+				  <textarea class="form-control" id="Mensaje" rows="3">
+				  </textarea>
+
+				  <input type="submit" class="btn-check" id="Enviar" checked autocomplete="off">
+					<label class="btn btn_contact" for="Enviar">Enviar</label>
+
+					<input type="reset" class="btn-check" id="Cancelar" checked autocomplete="off">
+					<label class="btn btn_contactop" for="Cancelar">Cancelar</label>
+				</div>
+			</form>
+
+		</section>
+
+	 </main>
+
+
+	<!-- ends main -->
+
+<!-- Incio de Footer -->
+
+    <footer class="pie">
+      <div>
+        <p class="text_center">Realice su pedido con 72 horas de anticipación</p>
+        </div>
+      <div>
+        <a href="https://m.facebook.com/profile.php?id=100048685221562" target="_blank">
+          <img src="../img/logoface.png" alt="visite nuestro facebook" class="pie_icon_--sm transform_red">
+        </a>
+        <a href="https://www.instagram.com/morethansweet.dateungusto" target="_blank">
+          <img src="../img/logoinsta.png" alt="visite nuestro instagram" class="pie_icon_--sm transform_red">
+        </a>
+      </div>
+    </footer>
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
