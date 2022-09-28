@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 const articulos = [
   {
     id: 1,
@@ -79,7 +80,7 @@ const artDomIt = document.querySelector("#items");
 const carDom = document.querySelector("#carrito");
 const carTotalDom = document.querySelector("#total");
 const btvaciarDom = document.querySelector("#boton-vaciar");
-
+const miLocalStorage = window.localStorage;
 
 function renderizarProductos() {
   articulos.forEach((info) => {
@@ -111,7 +112,7 @@ function renderizarProductos() {
     cardHtml.appendChild(artImg);
     cardHtml.appendChild(artTitulo);
     cardHtml.appendChild(artPrecio);
-    cardHtml.appendChild(btMas);
+    cardHtml.appendChild(btMas); 
     artHtml.appendChild(cardHtml);
     artDomIt.appendChild(artHtml);
   });
@@ -122,6 +123,7 @@ function anyadirProductoAlCarrito(evento) {
   carrito.push(evento.target.getAttribute("marcador"));
   
   renderizarCarrito();
+  guardarCarritoEnLocalStorage();
 }
 
 function renderizarCarrito() {
@@ -190,9 +192,28 @@ function vaciarCarrito() {
   carrito = [];
   
   renderizarCarrito();
+
+  localStorage.clear();
 }
+
+function guardarCarritoEnLocalStorage () {
+  miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDeLocalStorage () {
+  
+  if (miLocalStorage.getItem('carrito') !== null) {
+      
+      carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+  }
+}
+
+
 
 btvaciarDom.addEventListener("click", vaciarCarrito);
 
+cargarCarritoDeLocalStorage();
 renderizarProductos();
 renderizarCarrito();
+
+});
