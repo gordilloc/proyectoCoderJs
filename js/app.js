@@ -194,6 +194,9 @@ function vaciarCarrito() {
   renderizarCarrito();
 
   localStorage.clear();
+
+  Swal.fire('Carrito vacio')
+
 }
 
 function guardarCarritoEnLocalStorage () {
@@ -217,3 +220,5 @@ renderizarProductos();
 renderizarCarrito();
 
 });
+
+
