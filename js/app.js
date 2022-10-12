@@ -1,78 +1,18 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-const articulos = [
-  {
-    id: 1,
-    nombre: "Torta S",
-    precio: 900,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 2,
-    nombre: "Torta M",
-    precio: 1200,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 3,
-    nombre: "Torta XL",
-    precio: 1700,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 4,
-    nombre: "Postre S",
-    precio: 900,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 5,
-    nombre: "Postre M",
-    precio: 800,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 6,
-    nombre: "Postre XL",
-    precio: 1100,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 7,
-    nombre: "Galleta Pack 5",
-    precio: 400,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 8,
-    nombre: "Galleta Pack 10",
-    precio: 550,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 9,
-    nombre: "Galleta Pack 15",
-    precio: 1000,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 10,
-    nombre: "Porcion 1",
-    precio: 200,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 11,
-    nombre: "Porciones 2",
-    precio: 300,
-    imagen: "img/logoface.png",
-  },
-  {
-    id: 12,
-    nombre: "Porciones 4",
-    precio: 1100,
-    imagen: "img/logoface.png",
-  },
-];
+
+
+  async function fetchProductos() {
+  const response = await fetch('/data.json')
+  return await response.json()
+}
+
+let articulos = [];
+
+fetchProductos().then(productos => {
+  articulos = productos
+  renderizarProductos()
+})
 
 let carrito = [];
 const moneda = "$";
