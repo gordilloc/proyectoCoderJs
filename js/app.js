@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   async function fetchProductos() {
-  const response = await fetch('/data.json')
+  const response = await fetch('./data.json')
   return await response.json()
 }
 
