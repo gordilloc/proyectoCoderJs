@@ -20,6 +20,7 @@ const artDomIt = document.querySelector("#items");
 const carDom = document.querySelector("#carrito");
 const carTotalDom = document.querySelector("#total");
 const btvaciarDom = document.querySelector("#boton-vaciar");
+const btcomprarDom = document.querySelector("#boton-comprar");
 const miLocalStorage = window.localStorage;
 
 function renderizarProductos() {
@@ -48,7 +49,7 @@ function renderizarProductos() {
     btMas.textContent = "+";
     btMas.setAttribute("marcador", info.id);
     btMas.addEventListener("click", anyadirProductoAlCarrito);
-    
+
     cardHtml.appendChild(artImg);
     cardHtml.appendChild(artTitulo);
     cardHtml.appendChild(artPrecio);
@@ -65,6 +66,7 @@ function anyadirProductoAlCarrito(evento) {
   renderizarCarrito();
   guardarCarritoEnLocalStorage();
 }
+
 
 function renderizarCarrito() {
   
@@ -125,6 +127,7 @@ function calcularTotal() {
       return total + miItem[0].precio;
     }, 0)
     .toFixed(0);
+
 }
 
 function vaciarCarrito() {
@@ -136,6 +139,48 @@ function vaciarCarrito() {
   localStorage.clear();
 
   Swal.fire('Carrito vacio')
+
+}
+
+function fincompra(){
+
+  carrito = [];
+  
+  renderizarCarrito();
+
+  localStorage.clear();
+
+(async () => {
+  const { value: text } = await Swal.fire({
+    input: 'textarea',
+    inputLabel: 'Ingrese su dirección y Telefono',
+    inputPlaceholder: 'Calle, Aperamento, numero de Celular',
+    inputAttributes: {
+      'aria-label': 'Type your message here'
+    },
+    showCancelButton: true
+  })
+  
+  if (text) {
+    Swal.fire({
+      title: '¿Es correcta sus datos?',
+      text: `Su datos son ${text}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Gracias por su compra',
+          'Nos podremos en contacto',
+          'success'
+        )
+      }
+    })
+  }
+})()
 
 }
 
@@ -154,6 +199,7 @@ function cargarCarritoDeLocalStorage () {
 
 
 btvaciarDom.addEventListener("click", vaciarCarrito);
+btcomprarDom.addEventListener("click", fincompra)
 
 cargarCarritoDeLocalStorage();
 renderizarProductos();
